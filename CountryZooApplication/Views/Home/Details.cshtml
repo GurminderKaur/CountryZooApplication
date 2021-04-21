@@ -1,0 +1,42 @@
+﻿@model HomeAnimalsViewModel;
+
+@{
+
+    //Layout = "null"; // or specify any other required layout file e.g. _AdminLayout
+
+}
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card-header">
+            <h1>@Model.Animal.Name</h1>
+        </div>
+    </div>
+    <div class="card-body text-center">
+        <h4>Animal Id: @Model.Animal.Id</h4>
+        <h4>Species: @Model.Animal.Species</h4>
+        <h4>Name: @Model.Animal.Name</h4>
+        <h4>Weight: @Model.Animal.Weight</h4>
+    </div>
+    <div class="card-footer text-center">
+        <a asp-controller="home" asp-action="index" class="btn btn-primary">Back</a>
+        <a href="#" class="btn btn-primary">Edit</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+
+@*<h1>Details Page</h1>
+    <div>
+        Species: @Model.Animal.Species
+    </div>
+    <div>
+        Name: @Model.Animal.Name
+    </div>
+    <div>
+        Weight: @Model.Animal.Weight
+    </div>*@
+@section Scripts {
+
+    <script src="~/js/CustomScript.js"></script>
+
+}

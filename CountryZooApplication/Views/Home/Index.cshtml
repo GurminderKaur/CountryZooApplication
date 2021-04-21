@@ -1,0 +1,71 @@
+﻿@*@{
+        ViewData["Title"] = "Home Page";
+    }*@
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+
+@model IEnumerable<Animal> ;
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <ul class="nav-bar nav">
+                        <li class="nav-item">
+                            <a asp-controller="home" asp-action="index" class="nav-link">List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="home" asp-action="create" class="nav-link">Create</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </nav>
+    </div>
+
+
+
+    <div class="card-deck">
+
+
+        @foreach (var animal in Model)
+        {
+            <div class="card m-3">
+                <div class="card-header">
+                    <h3>@animal.Name</h3>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-controller="home" asp-action="details" asp-route-id="@animal.Id" class="btn btn-primary">View</a>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        }
+    </div>
+    @*<table>
+            <thead>
+                <tr>ID</tr>
+                <tr>Species</tr>
+                <tr>Name</tr>
+                <tr>Weight</tr>
+            </thead>
+            <tbody>
+                @foreach (var animal in Model)
+                {
+                    <tr>
+                        <td>@animal.Id</td>
+                        <td>@animal.Species</td>
+                        <td>@animal.Name</td>
+                        <td>@animal.Weight</td>
+                    </tr>
+                }
+            </tbody>
+        </table>*@
