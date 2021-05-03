@@ -12,6 +12,7 @@ namespace CountryZooApplication.Controllers
 {
     public class HomeController : Controller
     {
+        //somw test
         private readonly IAnimalRepository _animalRepository;
         private readonly ILogger<HomeController> _logger;
 
